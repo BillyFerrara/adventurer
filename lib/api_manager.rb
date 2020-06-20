@@ -7,7 +7,8 @@ class Adventurer::APIManager
 
     url = BASE_URL + "races"
     res = HTTParty.get(url)
-    res 
+    racearr = res["results"]
+    Adventurer::Character.mass_create_from_api(racearr) 
   end
 
 

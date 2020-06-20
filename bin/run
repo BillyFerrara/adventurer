@@ -4,4 +4,5 @@ require_relative '../lib/environment'
 
 puts "in the binary executable"
 
-Adventurer::APIManager.get_adventurer
+Adventurer::APIManager.get_races
+binding.pry

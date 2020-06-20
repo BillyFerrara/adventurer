@@ -6,10 +6,15 @@ class Adventurer::Character
     @@all
   end
 
-  def self.mass_create_from_api(racearr)
+  def self.mass_create_from_race_api(racearr)
     racearr.each do |racehash|
       self.new(racehash["name"], racehash["url"])
-      
+    end
+  end
+
+  def self.mass_create_from_class_api(classarr)
+    classarr.each do |classhash|
+      self.new(classhash["name"], classhash["url"])
     end
   end
 

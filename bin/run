@@ -5,4 +5,5 @@ require_relative '../lib/environment'
 puts "in the binary executable"
 
 Adventurer::APIManager.get_races
+Adventurer::APIManager.get_classes
 binding.pry

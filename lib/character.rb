@@ -9,7 +9,8 @@ class Adventurer::Character
   def self.mass_create_from_api(racearr)
     racearr.each do |racehash|
       self.new(racehash["name"], racehash["url"])
-    end 
+      
+    end
   end
 
   attr_accessor :name, :url

@@ -12,16 +12,20 @@ class Adventurer::APIManager
   end
 
 
-#alter the key :name to something else then initialize the new value = nil 
+
   def self.get_classes
     puts "MAKING ANOTHER REQUEST"
 
     url2 = BASE_URL + "classes"
     res2 = HTTParty.get(url2)
     classarr = res2["results"]
-    Adventurer::Character.mass_create_from_class_api(classarr)
+
+    # mappings = { "name" => "classes"}
+    # # classarr.each_with_object({}) { |(k, v), memo| memo[mappings[k]] = v }
+    # # classarr
+    # classarr.transform_keys{|k| mappings[k]}
+    classarr
+    Adventurer::Character.mass_create_from_classes_api(classarr)
   end
-
-
 
 end

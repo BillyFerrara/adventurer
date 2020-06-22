@@ -12,9 +12,10 @@ class Adventurer::Character
     end
   end
 
-  def self.mass_create_from_class_api(classarr)
+  def self.mass_create_from_classes_api(classarr)
     classarr.each do |classhash|
-      self.new(classhash["name"], classhash["url"])
+      #changed (classhash["name"], classhash["url"])
+      self.new(classhash["classes"], classhash["url"])
     end
   end
 
@@ -22,8 +23,8 @@ class Adventurer::Character
 
   attr_accessor :name, :url
 
-  def initialize(name=nil, url=nil)
-    @name, @url = name, url
+  def initialize(name=nil, classes= nil, url=nil)
+    @name, @classes, @url = name, classes, url
     save
   end
 

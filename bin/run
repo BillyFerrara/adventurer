@@ -2,8 +2,8 @@
 
 require_relative '../lib/environment'
 
-puts "in the binary executable"
+Adventurer::CLI.new.start 
 
-Adventurer::APIManager.get_races
-Adventurer::APIManager.get_classes
-binding.pry
+# Adventurer::APIManager.get_races
+# Adventurer::APIManager.get_classes
+#binding.pry

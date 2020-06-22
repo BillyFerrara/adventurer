@@ -4,6 +4,7 @@ require 'httparty'
 
 require_relative './api_manager'
 require_relative './character'
+require_relative './CLI'
 
 
 

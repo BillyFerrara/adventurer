@@ -18,6 +18,8 @@ class Adventurer::Character
     end
   end
 
+  #both class and race objects end up in @@all ... idk if this is a problem yet 
+
   attr_accessor :name, :url
 
   def initialize(name, url)

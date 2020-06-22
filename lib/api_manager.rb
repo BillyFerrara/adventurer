@@ -11,6 +11,8 @@ class Adventurer::APIManager
     Adventurer::Character.mass_create_from_race_api(racearr)
   end
 
+
+#alter the key :name to something else then initialize the new value = nil 
   def self.get_classes
     puts "MAKING ANOTHER REQUEST"
 

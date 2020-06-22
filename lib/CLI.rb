@@ -10,7 +10,7 @@ class Adventurer::CLI
   def introduction
     puts "\n\n\n"
     puts "Welcome Adventurer!"
-    sleep(3)
+    sleep(2)
     puts "\n\n\n"
   end
 
@@ -23,8 +23,24 @@ class Adventurer::CLI
   end
 
   def main_loop
+    loop do
+      menu
+    end
     puts "in main loop"
+
+  end
+
+  def menu
+    display_race
+    #display_class
+    # display_instructions
     binding.pry
   end
 
+  def display_race
+    race = Adventurer::Character.all
+    race.each do |race|
+      puts race.name
+    end
+  end
 end

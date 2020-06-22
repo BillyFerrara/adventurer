@@ -6,4 +6,4 @@ Adventurer::CLI.new.start
 
 # Adventurer::APIManager.get_races
 # Adventurer::APIManager.get_classes
-#binding.pry
+# binding.pry

@@ -14,8 +14,7 @@ class Adventurer::Character
 
   def self.mass_create_from_classes_api(classarr)
     classarr.each do |classhash|
-      #changed (classhash["name"], classhash["url"])
-      self.new(classhash["classes"], classhash["url"])
+      self.new(classhash["name"], classhash["url"])
     end
   end
 

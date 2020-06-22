@@ -66,7 +66,7 @@ class Adventurer::CLI
   end
 
   # def display_classes
-  #   classes = Adventurer::Character.all
+  #   classes = Adventurer::Character.all[10,21]
   #   classes.each.with_index(1) do |clas, index|
   #     puts "#{index}. #{clas.name}"
   #   end

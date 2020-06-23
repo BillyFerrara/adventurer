@@ -68,6 +68,7 @@ class Adventurer::CLI
   def display_single_race(i)
     race_obj = Adventurer::Character.all[i]
     Adventurer::APIManager.get_race_details(race_obj)
+  binding.pry 
   end
 
   # display_classes works!

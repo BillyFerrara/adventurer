@@ -8,7 +8,8 @@ class Adventurer::Character
 
   def self.mass_create_from_race_api(racearr)
     racearr.each do |racehash|
-      self.new(racehash["name"], racehash["url"])
+      # binding.pry
+       self.new(racehash["name"], racehash["url"])
     end
   end
 
@@ -18,9 +19,8 @@ class Adventurer::Character
     end
   end
 
-  #both class and race objects end up in @@all ... idk if this is a problem yet
 
-  attr_accessor :name, :url
+   attr_accessor :name, :url, :age, :alignment, :size, :language
 
   def initialize(name=nil, url=nil)
     @name, @url = name, url

@@ -40,8 +40,8 @@ class Adventurer::CLI
   end
 
   def menu
-    display_race
-    #display_classes
+    #display_race
+    display_classes
     display_instructions
     #binding.pry
   end
@@ -65,12 +65,14 @@ class Adventurer::CLI
     end
   end
 
-  # def display_classes
-  #   classes = Adventurer::Character.all[10,21]
-  #   classes.each.with_index(1) do |clas, index|
-  #     puts "#{index}. #{clas.name}"
-  #   end
-  # end
+
+
+  def display_classes
+    classes = Adventurer::Character.all[10,21]
+    classes.each.with_index(10) do |clas, index|
+      puts "#{index}. #{clas.name}"
+    end
+  end
 
   def display_instructions
     puts <<-INST

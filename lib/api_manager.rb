@@ -12,7 +12,7 @@ class Adventurer::APIManager
   end
 
 
-
+#alter the key :name to something else then initialize the new value = nil
   def self.get_classes
     puts "MAKING ANOTHER REQUEST"
 
@@ -21,5 +21,7 @@ class Adventurer::APIManager
     classarr = res2["results"]
     Adventurer::Character.mass_create_from_classes_api(classarr)
   end
+
+
 
 end

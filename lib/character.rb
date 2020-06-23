@@ -22,8 +22,8 @@ class Adventurer::Character
 
   attr_accessor :name, :url
 
-  def initialize(name=nil, classes= nil, url=nil)
-    @name, @classes, @url = name, classes, url
+  def initialize(name=nil, url=nil)
+    @name, @url = name, url
     save
   end
 

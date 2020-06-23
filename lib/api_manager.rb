@@ -12,7 +12,22 @@ class Adventurer::APIManager
   end
 
 
-#alter the key :name to something else then initialize the new value = nil
+
+
+  def self.get_race_details(race)
+    puts "\nLOADING...\n"
+    
+
+    url = "https://www.dnd5eapi.co#{race.url}"
+    # url2 = race.url
+
+    res = HTTParty.get(url)
+    binding.pry
+
+  end
+
+
+
   def self.get_classes
     puts "MAKING ANOTHER REQUEST"
 

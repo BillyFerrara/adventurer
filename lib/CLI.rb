@@ -9,7 +9,7 @@ class Adventurer::CLI
 
   def introduction
     puts "\n\n\n"
-    puts "Welcome Adventurer!"
+    puts "\nWelcome Adventurer!\n"
     sleep(2)
     puts "\n\n\n"
   end
@@ -33,15 +33,15 @@ class Adventurer::CLI
         next
       else
         puts input
-        #display_single_race(input)
+        display_single_race(input)
       end
     puts "in main loop"
     end
   end
 
   def menu
-    #display_race
-    display_classes
+    display_race
+    #display_classes
     display_instructions
     #binding.pry
   end
@@ -50,7 +50,7 @@ class Adventurer::CLI
     input = gets.strip.downcase
     return input if input == "exit"
     if input.to_i.between?(1,9)
-      return input.to_i
+      return input.to_i - 1
     else
       puts "Enter the number of your desired race or 'exit' to exit "
       return "invalid"
@@ -65,18 +65,23 @@ class Adventurer::CLI
     end
   end
 
-
-
-  def display_classes
-    classes = Adventurer::Character.all[10,21]
-    classes.each.with_index(10) do |clas, index|
-      puts "#{index}. #{clas.name}"
-    end
+  def display_single_race(i)
+    race_obj = Adventurer::Character.all[i]
+    Adventurer::APIManager.get_race_details(race_obj)
   end
+
+  # display_classes works!
+  # def display_classes
+  #   classes = Adventurer::Character.all[10,21]
+  #   classes.each.with_index(1) do |clas, index|
+  #     puts "#{index}. #{clas.name}"
+  #     puts "-------"
+  #   end
+  # end
 
   def display_instructions
     puts <<-INST
-    Please enter the number of your character's desired race
+    Please enter the number of your character's desired race or 'exit' to quit.
     INST
   end
 

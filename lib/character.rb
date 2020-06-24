@@ -21,7 +21,7 @@ class Adventurer::Character
 
 
    attr_accessor :name, :url, :age, :alignment, :size, :language, :proficiency,
-    :hit_die, :cantrip, :equipment 
+    :hit_die, :cantrip, :equipment
 
   def initialize(name=nil, url=nil)
     @name, @url = name, url
@@ -46,10 +46,10 @@ class Adventurer::Character
 
   def class_details
     <<-DESC
-      Hit Die : #{self.hit_die}
+      Hit Die: D#{self.hit_die}
       Proficiencies: #{self.proficiency}
       Starting Equipment: #{self.equipment}
-      Cantrips: #{self.cantrip}
+
     ------------------------------------
 
     DESC

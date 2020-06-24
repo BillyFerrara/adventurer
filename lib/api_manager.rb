@@ -40,7 +40,11 @@ class Adventurer::APIManager
 
     clas.proficiency = res["proficiencies"].map {|hash| hash["name"]}
     clas.hit_die = res["hit_die"]
+
     clas.equipment = res2["starting_equipment"].map {|hash| hash["item"]["name"]}
+    #Working on adding additional starting equipment choices
+    # clas.choose_equip_1 = e1 = res2["choice_1"]["from"].map {|hash| hash["item"]["url"]["name"]}
+    # clas.e1 = e1.map{|x| x["item"]["name"].to_i}
     # clas.cantrip = res["info"].map {|hash| hash["desc"]}
   end
 

@@ -8,10 +8,10 @@ class Adventurer::CLI
   end
 
   def introduction
-    puts "\nWelcome Adventurer!\n"
-    puts "---------------------"
+    puts "\nWelcome To The Fantasic World Of Dungeons & Dragons, Adventurer!\n"
+    puts "------------------------------------------------------------------"
     sleep(2)
-    puts "\n\n\n"
+    puts "\n\n"
   end
 
   def get_races_data
@@ -59,15 +59,16 @@ class Adventurer::CLI
     race = Adventurer::Character.all[0,9]
     race.each.with_index(1) do |rac, index|
       puts "#{index}. #{rac.name}"
-      puts "-------"
+      puts "------------"
     end
   end
 
   def display_single_race(i)
     race_obj = Adventurer::Character.all[i]
     Adventurer::APIManager.get_race_details(race_obj)
+    puts race_obj.name.upcase
     puts race_obj.race_details
-    puts "\nEnter any key to continue"
+    puts "\nEnter any key to return to the previous screen"
     gets
   end
 
@@ -82,7 +83,7 @@ class Adventurer::CLI
 
   def display_instructions
     puts <<-INST
-    Please enter the number of your character's desired race or 'exit' to quit.
+    Please enter the number you would like to learn more about or 'exit' to quit.
     INST
   end
 

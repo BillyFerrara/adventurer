@@ -14,9 +14,6 @@ class Adventurer::APIManager
 
 
   def self.get_race_details(race)
-    # puts "\nLOADING...\n"
-
-
     url = "https://www.dnd5eapi.co#{race.url}"
     res = HTTParty.get(url)
 
@@ -25,16 +22,21 @@ class Adventurer::APIManager
     race.size = res["size_description"]
     race.language = res["language_desc"]
     #add race proficiencies
-
   end
 
   def self.get_classes
-    # puts "MAKING ANOTHER REQUEST"
-
     url2 = BASE_URL + "classes"
     res2 = HTTParty.get(url2)
     classarr = res2["results"]
     Adventurer::Character.mass_create_from_classes_api(classarr)
+  end
+
+  def self.get_class_details(clas)
+    url = "https://www.dnd5eapi.co#{clas.url}"
+    res = HTTParty.get(url)
+
+    clas.name = res["name"]
+  
   end
 
 end

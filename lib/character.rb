@@ -43,4 +43,12 @@ class Adventurer::Character
     DESC
   end
 
+  def class_details
+    <<-DESC
+    Name: #{self.name}
+    -----------------
+    
+    DESC
+  end
+
 end

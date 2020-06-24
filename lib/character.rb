@@ -20,7 +20,7 @@ class Adventurer::Character
   end
 
 
-   attr_accessor :name, :url, :age, :alignment, :size, :language
+   attr_accessor :name, :url, :age, :alignment, :size, :language, :proficiency
 
   def initialize(name=nil, url=nil)
     @name, @url = name, url
@@ -45,9 +45,9 @@ class Adventurer::Character
 
   def class_details
     <<-DESC
-    Name: #{self.name}
+      Proficiencies: #{self.proficiency}
     -----------------
-    
+
     DESC
   end
 

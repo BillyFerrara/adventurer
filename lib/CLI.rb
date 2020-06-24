@@ -101,8 +101,8 @@ class Adventurer::CLI
   def get_class_choice
     input = gets.strip.downcase
     return input if input == "exit"
-    if input.to_i.between?(1,11)
-      return input.to_i - 1
+    if input.to_i.between?(1,12)
+      return input.to_i + 8
     else
       puts "Enter the number of your desired class or 'exit' to exit"
       return "invalid"
@@ -110,7 +110,7 @@ class Adventurer::CLI
   end
 
   def display_classes
-    classes = Adventurer::Character.all[10,21]
+    classes = Adventurer::Character.all[9,22]
     classes.each.with_index(1) do |clas, index|
       puts "#{index}. #{clas.name}"
       puts "-------"

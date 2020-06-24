@@ -8,8 +8,8 @@ class Adventurer::CLI
   end
 
   def introduction
-    puts "\n\n\n"
     puts "\nWelcome Adventurer!\n"
+    puts "---------------------"
     sleep(2)
     puts "\n\n\n"
   end
@@ -32,10 +32,8 @@ class Adventurer::CLI
       when "invalid"
         next
       else
-        puts input
         display_single_race(input)
       end
-    puts "in main loop"
     end
   end
 
@@ -52,7 +50,7 @@ class Adventurer::CLI
     if input.to_i.between?(1,9)
       return input.to_i - 1
     else
-      puts "Enter the number of your desired race or 'exit' to exit "
+      puts "Enter the number of your desired race or 'exit' to exit"
       return "invalid"
     end
   end
@@ -68,7 +66,9 @@ class Adventurer::CLI
   def display_single_race(i)
     race_obj = Adventurer::Character.all[i]
     Adventurer::APIManager.get_race_details(race_obj)
-  binding.pry 
+    puts race_obj.race_details
+    puts "\nEnter any key to continue"
+    gets
   end
 
   # display_classes works!

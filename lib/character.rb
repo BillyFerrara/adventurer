@@ -31,6 +31,16 @@ class Adventurer::Character
     @@all << self
   end
 
-
+  def race_details
+    <<-DESC
+    Age: #{self.age}
+    -----------------
+    Alignment: #{self.alignment}
+    -----------------
+    Size: #{self.size}
+    -----------------
+    Language: #{self.language}
+    DESC
+  end
 
 end

@@ -35,8 +35,13 @@ class Adventurer::APIManager
     url = "https://www.dnd5eapi.co#{clas.url}"
     res = HTTParty.get(url)
 
+    url2 = "https://www.dnd5eapi.co#{clas.url}/starting-equipment/"
+    res2 = HTTParty.get(url2)
+
     clas.proficiency = res["proficiencies"].map {|hash| hash["name"]}
-    
+    clas.hit_die = res["hit_die"]
+    clas.equipment = res2["starting_equipment"].map {|hash| hash["item"]["name"]}
+    # clas.cantrip = res["info"].map {|hash| hash["desc"]}
   end
 
 end

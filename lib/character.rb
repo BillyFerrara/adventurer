@@ -20,7 +20,8 @@ class Adventurer::Character
   end
 
 
-   attr_accessor :name, :url, :age, :alignment, :size, :language, :proficiency
+   attr_accessor :name, :url, :age, :alignment, :size, :language, :proficiency,
+    :hit_die, :cantrip, :equipment 
 
   def initialize(name=nil, url=nil)
     @name, @url = name, url
@@ -34,19 +35,22 @@ class Adventurer::Character
   def race_details
     <<-DESC
     Age: #{self.age}
-    -----------------
+    ----
     Alignment: #{self.alignment}
-    -----------------
+    ----------
     Size: #{self.size}
-    -----------------
+    -----
     Language: #{self.language}
     DESC
   end
 
   def class_details
     <<-DESC
+      Hit Die : #{self.hit_die}
       Proficiencies: #{self.proficiency}
-    -----------------
+      Starting Equipment: #{self.equipment}
+      Cantrips: #{self.cantrip}
+    ------------------------------------
 
     DESC
   end
